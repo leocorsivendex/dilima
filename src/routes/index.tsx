@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, MapPin, Ticket, Users, AlertCircle, Instagram, Mail } from "lucide-react";
 
@@ -13,8 +13,7 @@ const eventInfo = {
   doors: "19h",
   venue: "Teatro Atos",
   address: "Av. Paulista, 1000 — Bela Vista, São Paulo · SP",
-  mapEmbed:
-    "https://www.google.com/maps?q=Avenida+Paulista,+1000,+São+Paulo,+SP&output=embed",
+  mapEmbed: "https://www.google.com/maps?q=Avenida+Paulista,+1000,+São+Paulo,+SP&output=embed",
   mapLink: "https://maps.google.com/?q=Avenida+Paulista,+1000,+São+Paulo,+SP",
 };
 
@@ -142,7 +141,8 @@ function HeroSection() {
             <div className="flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2">
               <Clock className="h-4 w-4 text-coral" />
               <span className="font-medium text-foreground">
-                {eventInfo.time} <span className="text-muted-foreground">(portas {eventInfo.doors})</span>
+                {eventInfo.time}{" "}
+                <span className="text-muted-foreground">(portas {eventInfo.doors})</span>
               </span>
             </div>
             <div className="flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2">
@@ -202,14 +202,13 @@ function AboutSection() {
             sobre quem esqueceu o culto de jovens? Ou sobre a sogra que apareceu no domingo?
           </p>
           <p>
-            "Vida de Crente Casado" é um show de stand-up comedy que pega essas situações do
-            dia a dia e transforma em risada com leveza, respeito e muita identificação. É um
-            convite para casais e noivos cristãos se encontrarem, relaxarem e lembrarem por que
-            disseram "sim".
+            "Vida de Crente Casado" é um show de stand-up comedy que pega essas situações do dia a
+            dia e transforma em risada com leveza, respeito e muita identificação. É um convite para
+            casais e noivos cristãos se encontrarem, relaxarem e lembrarem por que disseram "sim".
           </p>
           <p>
-            O foco não é o artista. É a experiência de rir junto das mesmas coisas que acontecem
-            na sua casa. Porque quando a gente ri junto, a gente se aproxima.
+            O foco não é o artista. É a experiência de rir junto das mesmas coisas que acontecem na
+            sua casa. Porque quando a gente ri junto, a gente se aproxima.
           </p>
         </div>
 
@@ -315,12 +314,7 @@ function LocationSection() {
               </div>
             </div>
 
-            <Button
-              variant="cta"
-              size="lg"
-              className="mt-8 h-12 px-8 text-base"
-              asChild
-            >
+            <Button variant="cta" size="lg" className="mt-8 h-12 px-8 text-base" asChild>
               <a href={eventInfo.mapLink} target="_blank" rel="noopener noreferrer">
                 Ver rotas no Google Maps
               </a>
@@ -364,9 +358,7 @@ function TicketsSection() {
             <div
               key={ticket.name}
               className={`relative flex flex-col rounded-2xl border p-6 shadow-sm transition-shadow hover:shadow-lg ${
-                ticket.featured
-                  ? "border-coral bg-card shadow-coral/10"
-                  : "border-border bg-card"
+                ticket.featured ? "border-coral bg-card shadow-coral/10" : "border-border bg-card"
               }`}
             >
               {ticket.featured && (
@@ -379,7 +371,9 @@ function TicketsSection() {
                 <p className="text-sm text-muted-foreground">{ticket.description}</p>
               </div>
               <div className="mb-6">
-                <span className="font-display text-4xl font-bold text-foreground">R${ticket.price}</span>
+                <span className="font-display text-4xl font-bold text-foreground">
+                  R${ticket.price}
+                </span>
               </div>
               <ul className="mb-8 flex-1 space-y-3 text-sm text-muted-foreground">
                 {ticket.included.map((item) => (
