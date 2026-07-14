@@ -1,4 +1,4 @@
-import heroImg from "@/assets/hero-vida-de-crente-casado.jpg";
+import heroImg from "@/assets/hero-vida-de-crente-casado-wide.png";
 import publico1 from "@/assets/publico-casais-1.jpg";
 import publico2 from "@/assets/publico-casais-2.jpg";
 
@@ -8,14 +8,14 @@ import publico2 from "@/assets/publico-casais-2.jpg";
 export const eventInfo = {
   name: "Vida de Crente Casado",
   tagline: "Especial de comédia para casais",
-  date: "08 de Agosto de 2026", // TODO: confirmar ano com o cliente
-  time: "19h",
-  doors: "18h", // TODO: confirmar horário de abertura das portas
+  date: "[DATA DO EVENTO]",
+  time: "[HORÁRIO]",
+  doors: "[ABERTURA DOS PORTÕES]",
   ageRating: "18 anos",
-  venue: "Recreio dos Bandeirantes, RJ",
-  address: "Recreio dos Bandeirantes — Rio de Janeiro · RJ", // TODO: endereço completo do local
-  mapEmbed: "https://www.google.com/maps?q=Recreio+dos+Bandeirantes,+Rio+de+Janeiro,+RJ&output=embed",
-  mapLink: "https://maps.google.com/?q=Recreio+dos+Bandeirantes,+Rio+de+Janeiro,+RJ",
+  venue: "[NOME DO LOCAL, CIDADE/UF]",
+  address: "[ENDEREÇO COMPLETO DO LOCAL]",
+  mapEmbed: "https://www.google.com/maps?q=Brasil&output=embed",
+  mapLink: "https://maps.google.com/?q=Brasil",
   heroImage: heroImg,
 };
 
@@ -40,7 +40,8 @@ export const about = {
 // Bio curta do artista. Aparece de forma discreta, não como headline da página.
 export const artist = {
   name: "Douglas Di Lima",
-  blurb: "", // TODO: pedir ao cliente uma linha de apresentação/credenciais
+  blurb:
+    "Ator, músico, humorista e comediante que vem ganhando destaque na cena da comédia com um nicho voltado para o público cristão, hoje com quase 2 milhões de seguidores em suas redes e lotando os principais teatros do Brasil.",
 };
 
 export const tickets = [
