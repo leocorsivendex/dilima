@@ -1,3 +1,4 @@
+import { createFileRoute } from '@tanstack/react-router'
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, MapPin, Ticket, Users, AlertCircle, Instagram, Mail } from "lucide-react";
 
