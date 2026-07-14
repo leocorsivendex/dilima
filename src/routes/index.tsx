@@ -2,60 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, MapPin, Ticket, Users, AlertCircle, Instagram, Mail } from "lucide-react";
 
-import heroImg from "@/assets/hero-vida-de-crente-casado.jpg";
-import publico1 from "@/assets/publico-casais-1.jpg";
-import publico2 from "@/assets/publico-casais-2.jpg";
-
-const eventInfo = {
-  name: "Vida de Crente Casado",
-  date: "22 de Agosto de 2026",
-  time: "20h",
-  doors: "19h",
-  venue: "Teatro Atos",
-  address: "Av. Paulista, 1000 — Bela Vista, São Paulo · SP",
-  mapEmbed: "https://www.google.com/maps?q=Avenida+Paulista,+1000,+São+Paulo,+SP&output=embed",
-  mapLink: "https://maps.google.com/?q=Avenida+Paulista,+1000,+São+Paulo,+SP",
-};
-
-const tickets = [
-  {
-    name: "Bronze",
-    price: "40",
-    description: "Ingresso individual",
-    included: ["Entrada para 1 pessoa", "Assento na plateia"],
-    featured: false,
-    cta: "Garantir meu Bronze",
-  },
-  {
-    name: "Prata",
-    price: "50",
-    description: "Mais conforto para você",
-    included: ["Ingresso individual", "Assento preferencial", "Reserva antecipada"],
-    featured: true,
-    cta: "Garantir meu Prata",
-  },
-  {
-    name: "Ouro",
-    price: "60",
-    description: "A experiência completa para casal",
-    included: ["Ingresso para 2 pessoas", "Assento preferencial", "Kit brinde do casal"],
-    featured: false,
-    cta: "Garantir meu Ouro",
-  },
-];
-
-const socialProof = [
-  {
-    img: publico1,
-    alt: "Casais na plateia rindo durante o show",
-    caption: "A plateia em uma das edições anteriores.",
-  },
-  {
-    img: publico2,
-    alt: "Casais conversando e rindo no foyer do teatro",
-    caption: "A diversão continua depois do palco.",
-  },
-];
+import {
+  eventInfo,
+  hero,
+  about,
+  artist,
+  tickets,
+  socialProof,
+  finalCta,
+  footer,
+} from "@/event-config";
 
 function scrollTo(id: string) {
   const el = document.getElementById(id);
@@ -86,7 +42,7 @@ function Header() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-cream/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         <a href="/" className="font-display text-lg font-semibold tracking-tight text-primary">
-          Vida de Crente Casado
+          {eventInfo.name}
         </a>
         <div className="hidden items-center gap-6 text-sm font-medium text-muted-foreground sm:flex">
           <button
@@ -123,15 +79,12 @@ function HeroSection() {
         <div className="order-2 flex flex-col gap-6 lg:order-1">
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
             <span className="inline-block h-2 w-2 rounded-full bg-coral" />
-            Stand-up comedy para casais e noivos cristãos
+            {hero.badge}
           </span>
           <h1 className="font-display text-4xl font-bold leading-[1.1] tracking-tight text-foreground md:text-5xl lg:text-6xl">
-            Ria junto. Se identifique. <span className="text-coral">Viva melhor o casamento.</span>
+            {hero.headline} <span className="text-coral">{hero.headlineHighlight}</span>
           </h1>
-          <p className="max-w-lg text-lg text-muted-foreground">
-            Uma noite de humor leve, honesto e cristão sobre a vida real de quem disse sim. Sem
-            palavras pesadas, só risadas que renovam.
-          </p>
+          <p className="max-w-lg text-lg text-muted-foreground">{hero.subheadline}</p>
 
           <div className="flex flex-wrap gap-4 py-2 text-sm text-muted-foreground">
             <div className="flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2">
@@ -166,14 +119,14 @@ function HeroSection() {
           </div>
 
           <p className="text-xs text-muted-foreground">
-            Classificação etária: 18 anos · Lotação limitada
+            Classificação etária: {eventInfo.ageRating} · Lotação limitada
           </p>
         </div>
 
         <div className="order-1 lg:order-2">
           <div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-primary/10">
             <img
-              src={heroImg}
+              src={eventInfo.heroImage}
               alt="Casal cristão rindo juntos em um evento de stand-up comedy"
               width={1920}
               height={1080}
@@ -194,23 +147,19 @@ function AboutSection() {
     <section id="sobre" className="bg-primary py-20 text-primary-foreground lg:py-28">
       <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
         <h2 className="font-display text-3xl font-bold tracking-tight md:text-4xl">
-          Isso não é só piada. <span className="text-coral">É a sua vida lá em casa.</span>
+          {about.headline} <span className="text-coral">{about.headlineHighlight}</span>
         </h2>
         <div className="mt-8 space-y-5 text-lg leading-relaxed opacity-95">
-          <p>
-            Você já tentou ler a Bíblia junto enquanto o cônjuge cochilava no sofá? Já discutiu
-            sobre quem esqueceu o culto de jovens? Ou sobre a sogra que apareceu no domingo?
-          </p>
-          <p>
-            "Vida de Crente Casado" é um show de stand-up comedy que pega essas situações do dia a
-            dia e transforma em risada com leveza, respeito e muita identificação. É um convite para
-            casais e noivos cristãos se encontrarem, relaxarem e lembrarem por que disseram "sim".
-          </p>
-          <p>
-            O foco não é o artista. É a experiência de rir junto das mesmas coisas que acontecem na
-            sua casa. Porque quando a gente ri junto, a gente se aproxima.
-          </p>
+          {about.paragraphs.map((paragraph, i) => (
+            <p key={i}>{paragraph}</p>
+          ))}
         </div>
+
+        {artist.blurb && (
+          <p className="mt-6 text-sm opacity-80">
+            Com <strong>{artist.name}</strong>. {artist.blurb}
+          </p>
+        )}
 
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
           <div className="rounded-xl bg-primary-foreground/10 p-5 backdrop-blur-sm">
@@ -240,16 +189,13 @@ function SocialProofSection() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-display text-3xl font-bold tracking-tight md:text-4xl">
-            Casais que já viveram essa noite
+            {socialProof.headline}
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Fotos reais de edições anteriores. A reação é sempre a mesma: risada fácil, olhar de
-            cumplicidade e vontade de voltar.
-          </p>
+          <p className="mt-4 text-lg text-muted-foreground">{socialProof.subheadline}</p>
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {socialProof.map((item, i) => (
+          {socialProof.photos.map((item, i) => (
             <figure key={i} className="group overflow-hidden rounded-2xl bg-card shadow-sm">
               <div className="aspect-[4/3] overflow-hidden">
                 <img
@@ -270,11 +216,10 @@ function SocialProofSection() {
 
         <div className="mt-12 rounded-2xl border border-border bg-card p-8 md:p-10">
           <blockquote className="text-center text-xl font-medium italic text-foreground md:text-2xl">
-            "A gente riu tanto que esqueceu o estresse da semana. Saiu lembrando por que a gente se
-            casou."
+            "{socialProof.testimonial.quote}"
           </blockquote>
           <p className="mt-4 text-center text-sm text-muted-foreground">
-            — Ana e Marcos, casados há 7 anos
+            — {socialProof.testimonial.author}
           </p>
         </div>
       </div>
@@ -310,7 +255,9 @@ function LocationSection() {
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <AlertCircle className="h-5 w-5 text-coral" />
-                <span className="font-medium text-foreground">Classificação etária: 18 anos</span>
+                <span className="font-medium text-foreground">
+                  Classificação etária: {eventInfo.ageRating}
+                </span>
               </div>
             </div>
 
@@ -404,17 +351,15 @@ function FinalCTA() {
     <section className="bg-hero py-20 text-hero-foreground lg:py-28">
       <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
         <h2 className="font-display text-3xl font-bold tracking-tight md:text-4xl">
-          Não deixe o estresse roubar a alegria do casamento.
+          {finalCta.headline}
         </h2>
-        <p className="mt-5 text-lg opacity-90">
-          Venha rir com quem entende a sua rotina. Uma noite para lembrar que o casamento cristão
-          também pode ser leve — e muito engraçado.
-        </p>
+        <p className="mt-5 text-lg opacity-90">{finalCta.subheadline}</p>
         <Button variant="cta" size="lg" className="mt-8 h-12 px-8 text-base">
-          Comprar agora
+          {finalCta.buttonLabel}
         </Button>
         <p className="mt-4 text-xs opacity-70">
-          Classificação etária: 18 anos · Lotação limitada · Ingressos sujeitos à disponibilidade
+          Classificação etária: {eventInfo.ageRating} · Lotação limitada · Ingressos sujeitos à
+          disponibilidade
         </p>
       </div>
     </section>
@@ -427,7 +372,7 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           <div className="text-center md:text-left">
-            <p className="font-display text-lg font-semibold text-primary">Vida de Crente Casado</p>
+            <p className="font-display text-lg font-semibold text-primary">{eventInfo.name}</p>
             <p className="mt-1 text-sm text-muted-foreground">
               Stand-up comedy para casais e noivos cristãos.
             </p>
@@ -435,7 +380,7 @@ function Footer() {
 
           <div className="flex items-center gap-4">
             <a
-              href="https://instagram.com/vidadecrentecasado"
+              href={footer.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
@@ -444,7 +389,7 @@ function Footer() {
               Instagram
             </a>
             <a
-              href="mailto:contato@vidadecrentecasado.com"
+              href={`mailto:${footer.email}`}
               className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               <Mail className="h-4 w-4" />
@@ -454,10 +399,10 @@ function Footer() {
         </div>
 
         <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 text-sm text-muted-foreground md:flex-row">
-          <p>© {new Date().getFullYear()} Vida de Crente Casado. Todos os direitos reservados.</p>
+          <p>© {new Date().getFullYear()} {eventInfo.name}. Todos os direitos reservados.</p>
           <span className="inline-flex items-center gap-2 rounded-full bg-destructive/10 px-3 py-1 text-xs font-medium text-destructive">
             <AlertCircle className="h-3.5 w-3.5" />
-            Classificação etária: 18 anos
+            Classificação etária: {eventInfo.ageRating}
           </span>
         </div>
       </div>
