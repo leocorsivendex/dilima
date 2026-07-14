@@ -93,11 +93,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "Uma noite de stand-up comedy feita para casais e noivos cristãos rirem juntos das situações reais do casamento.",
+          "Uma noite de stand-up comedy feita para casais e noivos cristãos rirem juntos das situações reais do casamento. Garanta seu ingresso.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@vidadecrentecasado" },
+      { name: "twitter:title", content: "Vida de Crente Casado — Stand-up para Casais e Noivos" },
+      { name: "twitter:description", content: "Uma noite de stand-up comedy feita para casais e noivos cristãos rirem juntos das situações reais do casamento. Garanta seu ingresso." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/USeTUY4yVFMqIBxv4EMPn5LcIF02/social-images/social-1784057133993-Casados-site.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/USeTUY4yVFMqIBxv4EMPn5LcIF02/social-images/social-1784057133993-Casados-site.webp" },
     ],
     links: [
       {
