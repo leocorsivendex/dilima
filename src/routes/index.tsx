@@ -11,11 +11,11 @@ const eventInfo = {
   date: "22 de Agosto de 2026",
   time: "20h",
   doors: "19h",
-  venue: "Teatro Riachuelo",
-  address: "R. do Lavapés, 438 — Liberdade, São Paulo · SP",
+  venue: "Teatro Atos",
+  address: "Av. Paulista, 1000 — Bela Vista, São Paulo · SP",
   mapEmbed:
-    "https://www.google.com/maps?q=Teatro+Riachuelo,+São+Paulo,+SP&output=embed",
-  mapLink: "https://maps.google.com/?q=Teatro+Riachuelo,+São+Paulo,+SP",
+    "https://www.google.com/maps?q=Avenida+Paulista,+1000,+São+Paulo,+SP&output=embed",
+  mapLink: "https://maps.google.com/?q=Avenida+Paulista,+1000,+São+Paulo,+SP",
 };
 
 const tickets = [
