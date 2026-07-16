@@ -214,12 +214,16 @@ function SocialProofSection() {
           ))}
         </div>
 
-        <div className="mt-12 rounded-2xl border border-border bg-card p-8 md:p-10">
-          <blockquote className="text-center text-xl font-medium italic text-foreground md:text-2xl">
-            "{socialProof.testimonial.quote}"
-          </blockquote>
-          <p className="mt-4 text-center text-sm text-muted-foreground">
-            — {socialProof.testimonial.author}
+        <div className="mt-12 flex flex-col items-center">
+          <video
+            controls
+            poster={socialProof.testimonialVideo.poster}
+            className="aspect-[9/16] w-full max-w-xs rounded-2xl border border-border bg-card shadow-sm"
+          >
+            <source src={socialProof.testimonialVideo.src} type="video/mp4" />
+          </video>
+          <p className="mt-4 max-w-sm text-center text-sm text-muted-foreground">
+            {socialProof.testimonialVideo.caption}
           </p>
         </div>
       </div>

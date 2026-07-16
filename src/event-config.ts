@@ -1,6 +1,7 @@
 import heroImg from "@/assets/hero-vida-de-crente-casado-wide.png";
 import publico1 from "@/assets/publico-casais-1.jpg";
 import publico2 from "@/assets/publico-casais-2.jpg";
+import testimonialPoster from "@/assets/testimonial-casal-poster.jpg";
 
 // Único arquivo a editar para replicar esta LP em outro evento/cidade.
 // Trocar também as imagens em src/assets/ mantendo os mesmos nomes de arquivo.
@@ -89,11 +90,10 @@ export const socialProof = {
       caption: "A diversão continua depois do palco.",
     },
   ],
-  // TODO: substituir por depoimento real assim que tiver (print de comentário/DM do Instagram do artista, por ex.)
-  testimonial: {
-    quote:
-      "É comum ver casais saindo do teatro de mãos dadas, ainda rindo da última piada, lembrando por que decidiram ficar juntos.",
-    author: "Reação recorrente do público em edições anteriores",
+  testimonialVideo: {
+    src: "/videos/testimonial-casal.mp4",
+    poster: testimonialPoster,
+    caption: "Depoimento real de um casal na plateia, gravado logo depois do show.",
   },
 };
 
