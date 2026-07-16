@@ -106,7 +106,7 @@ function HeroSection() {
 
           <div className="flex flex-wrap items-center gap-3 pt-2">
             <Button variant="cta" size="lg" className="h-12 px-8 text-base">
-              Garantir meu ingresso
+              {hero.ctaLabel}
             </Button>
             <Button
               variant="cta-outline"

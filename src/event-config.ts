@@ -98,10 +98,10 @@ export const socialProof = {
 };
 
 export const finalCta = {
-  headline: "Não deixe o estresse roubar a alegria do casamento.",
+  headline: "Bora rir dessas mesmas bobagens, juntos?",
   subheadline:
-    "Venha rir com quem entende a sua rotina. Uma noite para lembrar que o casamento cristão também pode ser leve — e muito engraçado.",
-  buttonLabel: "Comprar agora",
+    "Traz seu par pra uma noite de identificação e risada, sem cobrança e sem sermão.",
+  buttonLabel: "Garantir meu ingresso",
 };
 
 export const footer = {
