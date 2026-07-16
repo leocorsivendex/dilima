@@ -1,6 +1,6 @@
 import heroImg from "@/assets/hero-vida-de-crente-casado-wide.png";
-import publico1 from "@/assets/publico-casais-1.jpg";
-import publico2 from "@/assets/publico-casais-2.jpg";
+import publico1 from "@/assets/publico-plateia-1.jpg";
+import publico2 from "@/assets/publico-plateia-2.jpg";
 import testimonialPoster from "@/assets/testimonial-casal-poster.jpg";
 
 // Único arquivo a editar para replicar esta LP em outro evento/cidade.
@@ -81,13 +81,13 @@ export const socialProof = {
   photos: [
     {
       img: publico1,
-      alt: "Casais na plateia rindo durante o show",
-      caption: "A plateia em uma das edições anteriores.",
+      alt: "Plateia lotada de pé, com as mãos levantadas, e Douglas Di Lima sentado no palco",
+      caption: "Uma das edições anteriores, casa cheia.",
     },
     {
       img: publico2,
-      alt: "Casais conversando e rindo no foyer do teatro",
-      caption: "A diversão continua depois do palco.",
+      alt: "Plateia lotada com as mãos levantadas durante o show",
+      caption: "A energia da plateia em outra edição do show.",
     },
   ],
   testimonialVideo: {
