@@ -43,8 +43,7 @@ export const about = {
 // Bio curta do artista. Aparece de forma discreta, não como headline da página.
 export const artist = {
   name: "Douglas Di Lima",
-  blurb:
-    "Ator, músico, humorista e comediante que vem ganhando destaque na cena da comédia com um nicho voltado para o público cristão, hoje com quase 2 milhões de seguidores em suas redes e lotando os principais teatros do Brasil.",
+  blurb: "",
 };
 
 export const tickets = [
