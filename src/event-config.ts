@@ -87,10 +87,11 @@ export const socialProof = {
       caption: "A diversão continua depois do palco.",
     },
   ],
+  // TODO: substituir por depoimento real assim que tiver (print de comentário/DM do Instagram do artista, por ex.)
   testimonial: {
     quote:
-      "A gente riu tanto que esqueceu o estresse da semana. Saiu lembrando por que a gente se casou.",
-    author: "Ana e Marcos, casados há 7 anos",
+      "É comum ver casais saindo do teatro de mãos dadas, ainda rindo da última piada, lembrando por que decidiram ficar juntos.",
+    author: "Reação recorrente do público em edições anteriores",
   },
 };
 
