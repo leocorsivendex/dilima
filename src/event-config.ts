@@ -21,19 +21,21 @@ export const eventInfo = {
 
 export const hero = {
   badge: "Stand-up comedy para casais e noivos cristãos",
-  headline: "Ria junto. Se identifique.",
-  headlineHighlight: "Viva melhor o casamento.",
+  headline: "Toda casa de casal tem uma historinha boba que",
+  headlineHighlight: "vira risada",
   subheadline:
-    "Uma noite de humor leve, honesto e cristão sobre a vida real de quem disse sim. Sem palavras pesadas, só risadas que renovam.",
+    "A ideia é simples: rir junto das coisas que já são normais, com respeito e identificação.",
+  ctaLabel: "Marca esse dia com quem faz até os probleminhas valerem a pena",
 };
 
 export const about = {
   headline: "Isso não é só piada.",
   headlineHighlight: "É a sua vida lá em casa.",
   paragraphs: [
-    "Você já tentou ler a Bíblia junto enquanto o cônjuge cochilava no sofá? Já discutiu sobre quem esqueceu o culto de jovens? Ou sobre a sogra que apareceu no domingo?",
-    "\"Vida de Crente Casado\" é um show de stand-up comedy que pega essas situações do dia a dia e transforma em risada com leveza, respeito e muita identificação. É um convite para casais e noivos cristãos se encontrarem, relaxarem e lembrarem por que disseram \"sim\".",
-    "O foco não é o artista. É a experiência de rir junto das mesmas coisas que acontecem na sua casa. Porque quando a gente ri junto, a gente se aproxima.",
+    "Você já brigou por besteira com seu cônjuge? Tipo, uma besteira mesmo. Quem esqueceu de avisar que ia chegar tarde. Quem deixou a louça pro dia seguinte de novo. Quem cochilou no meio do culto e jurou que só fechou os olhos pra orar melhor.",
+    "A gente sabe. Todo casamento tem essas fricções pequenas do dia a dia.",
+    "\"Vida de Crente Casado\" pega exatamente essas situações, as mesmas que rolam na sua casa, e transforma numa noite de risada, leve e sem cobrança. A ideia é simples, rir junto das coisas que já são normais, com respeito e identificação.",
+    "Casais e noivos cristãos de todo tipo já se pegaram rindo e se olhando com aquele \"isso é a gente\" no rosto.",
   ],
 };
 
