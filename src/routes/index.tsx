@@ -1,6 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import { Calendar, Clock, MapPin, Ticket, Users, AlertCircle, Instagram, Mail } from "lucide-react";
+import {
+  Calendar,
+  Clock,
+  MapPin,
+  Ticket,
+  Users,
+  AlertCircle,
+  Instagram,
+  Mail,
+  ShieldCheck,
+} from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -51,7 +61,10 @@ function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-cream/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-        <a href="/" className="font-display text-lg font-semibold tracking-tight text-primary">
+        <a
+          href="/"
+          className="font-display text-base font-semibold tracking-tight text-primary sm:text-lg"
+        >
           {eventInfo.name}
         </a>
         <div className="hidden items-center gap-6 text-sm font-medium text-muted-foreground sm:flex">
@@ -81,7 +94,8 @@ function Header() {
           </button>
         </div>
         <Button variant="cta" size="sm" className="shadow-none">
-          Garantir meu ingresso agora
+          <span className="hidden sm:inline">Garantir meu ingresso agora</span>
+          <span className="sm:hidden">Ingressos</span>
         </Button>
       </div>
     </header>
@@ -102,22 +116,22 @@ function HeroSection() {
           </h1>
           <p className="max-w-lg text-lg text-muted-foreground">{hero.subheadline}</p>
 
-          <div className="flex flex-wrap gap-4 py-2 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 py-1 text-sm">
+            <span className="inline-flex items-center gap-2 text-foreground">
               <Calendar className="h-4 w-4 text-coral" />
-              <span className="font-medium text-foreground">{eventInfo.date}</span>
-            </div>
-            <div className="flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2">
+              <span className="font-medium">{eventInfo.date}</span>
+            </span>
+            <span className="inline-flex items-center gap-2 text-foreground">
               <Clock className="h-4 w-4 text-coral" />
-              <span className="font-medium text-foreground">
+              <span className="font-medium">
                 {eventInfo.time}{" "}
                 <span className="text-muted-foreground">(portas {eventInfo.doors})</span>
               </span>
-            </div>
-            <div className="flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2">
+            </span>
+            <span className="inline-flex items-center gap-2 text-foreground">
               <MapPin className="h-4 w-4 text-coral" />
-              <span className="font-medium text-foreground">{eventInfo.venue}</span>
-            </div>
+              <span className="font-medium">{eventInfo.venue}</span>
+            </span>
           </div>
 
           <div className="flex flex-wrap items-center gap-3 pt-2">
@@ -141,8 +155,8 @@ function HeroSection() {
           </p>
         </div>
 
-        <div className="order-1 lg:order-2">
-          <div className="relative overflow-hidden rounded-2xl shadow-2xl shadow-primary/10">
+        <div className="order-1 -mx-6 lg:order-2 lg:mx-0">
+          <div className="relative overflow-hidden shadow-sm shadow-primary/5 lg:rounded-3xl">
             <img
               src={eventInfo.heroImage}
               alt="Casal cristão rindo juntos em um evento de stand-up comedy"
@@ -175,21 +189,21 @@ function AboutSection() {
 
         {artist.blurb && <p className="mt-6 text-sm opacity-80">{artist.blurb}</p>}
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-3">
-          <div className="rounded-xl bg-primary-foreground/10 p-5 backdrop-blur-sm">
+        <div className="mt-12 grid gap-8 sm:grid-cols-3 sm:divide-x sm:divide-primary-foreground/15">
+          <div className="px-2">
             <Users className="mx-auto h-6 w-6 text-coral" />
             <p className="mt-3 font-display text-xl font-semibold">Para casais</p>
-            <p className="mt-1 text-sm opacity-90">Casados, noivos ou namorando sério.</p>
+            <p className="mt-1 text-sm opacity-80">Casados, noivos ou namorando sério.</p>
           </div>
-          <div className="rounded-xl bg-primary-foreground/10 p-5 backdrop-blur-sm">
+          <div className="px-2">
             <Ticket className="mx-auto h-6 w-6 text-coral" />
             <p className="mt-3 font-display text-xl font-semibold">Humor cristão</p>
-            <p className="mt-1 text-sm opacity-90">Leve, respeitoso e sem ultrapassar linhas.</p>
+            <p className="mt-1 text-sm opacity-80">Leve, respeitoso e sem ultrapassar linhas.</p>
           </div>
-          <div className="rounded-xl bg-primary-foreground/10 p-5 backdrop-blur-sm">
+          <div className="px-2">
             <Calendar className="mx-auto h-6 w-6 text-coral" />
             <p className="mt-3 font-display text-xl font-semibold">Uma noite só</p>
-            <p className="mt-1 text-sm opacity-90">Aproximadamente 90 minutos de risada.</p>
+            <p className="mt-1 text-sm opacity-80">Aproximadamente 90 minutos de risada.</p>
           </div>
         </div>
       </div>
@@ -208,31 +222,38 @@ function SocialProofSection() {
           <p className="mt-4 text-lg text-muted-foreground">{socialProof.subheadline}</p>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {socialProof.photos.map((item, i) => (
-            <figure key={i} className="group overflow-hidden rounded-2xl bg-card shadow-sm">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img
-                  src={item.img}
-                  alt={item.alt}
-                  width={1024}
-                  height={768}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                />
-              </div>
-              <figcaption className="p-4 text-sm font-medium text-muted-foreground">
-                {item.caption}
-              </figcaption>
-            </figure>
-          ))}
+        <div className="mt-12 grid gap-4 sm:grid-cols-5">
+          <figure className="group relative col-span-3 overflow-hidden rounded-3xl">
+            <img
+              src={socialProof.photos[0].img}
+              alt={socialProof.photos[0].alt}
+              loading="lazy"
+              className="aspect-[4/3] h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent" />
+            <figcaption className="absolute inset-x-0 bottom-0 p-4 text-sm font-medium text-cream">
+              {socialProof.photos[0].caption}
+            </figcaption>
+          </figure>
+          <figure className="group relative col-span-2 overflow-hidden rounded-3xl">
+            <img
+              src={socialProof.photos[1].img}
+              alt={socialProof.photos[1].alt}
+              loading="lazy"
+              className="aspect-[3/4] h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-transparent to-transparent" />
+            <figcaption className="absolute inset-x-0 bottom-0 p-4 text-sm font-medium text-cream">
+              {socialProof.photos[1].caption}
+            </figcaption>
+          </figure>
         </div>
 
-        <div className="mt-12 flex flex-col items-center">
+        <div className="mt-10 flex flex-col items-center">
           <video
             controls
             poster={socialProof.testimonialVideo.poster}
-            className="aspect-[9/16] w-full max-w-xs rounded-2xl border border-border bg-card shadow-sm"
+            className="aspect-[9/16] w-full max-w-xs rounded-3xl"
           >
             <source src={socialProof.testimonialVideo.src} type="video/mp4" />
           </video>
@@ -355,11 +376,12 @@ function TicketsSection() {
           ))}
         </div>
 
-        <div className="mx-auto mt-10 max-w-lg rounded-2xl border border-border bg-card p-6 text-center">
-          <p className="font-display text-lg font-semibold text-foreground">
+        <div className="mx-auto mt-12 flex max-w-lg flex-col items-center gap-2 text-center">
+          <ShieldCheck className="h-5 w-5 text-coral" />
+          <p className="font-display text-base font-semibold text-foreground">
             {guarantee.headline}
           </p>
-          <p className="mt-2 text-sm text-muted-foreground">{guarantee.text}</p>
+          <p className="text-sm text-muted-foreground">{guarantee.text}</p>
         </div>
       </div>
     </section>
