@@ -1,3 +1,4 @@
+import type { SVGProps } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,6 +11,7 @@ import {
   Instagram,
   Mail,
   ShieldCheck,
+  Heart,
 } from "lucide-react";
 import {
   Accordion,
@@ -37,6 +39,16 @@ function scrollTo(id: string) {
   if (el) {
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   }
+}
+
+// O lucide-react nao tem um icone de alianças, entao desenhamos um simples.
+function Rings(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" {...props}>
+      <circle cx="9" cy="13" r="6" />
+      <circle cx="15" cy="13" r="6" />
+    </svg>
+  );
 }
 
 export default function Index() {
@@ -104,8 +116,19 @@ function Header() {
 
 function HeroSection() {
   return (
-    <section className="relative pt-28 lg:pt-32">
-      <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 pb-16 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:pb-24">
+    <section className="relative overflow-hidden pt-28 lg:pt-32">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden sm:block">
+        <Heart
+          className="absolute left-4 top-24 h-7 w-7 -rotate-12 text-primary opacity-20 animate-float"
+          style={{ animationDuration: "7s" }}
+        />
+        <Rings
+          className="absolute right-6 top-24 h-9 w-9 rotate-6 text-coral opacity-15 animate-float"
+          style={{ animationDuration: "9s", animationDelay: "1s" }}
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-10 px-6 pb-16 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:pb-24">
         <div className="order-2 flex flex-col gap-6 lg:order-1">
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
             <span className="inline-block h-2 w-2 rounded-full bg-coral" />
@@ -178,8 +201,19 @@ function AboutSection() {
   const [firstHalf, secondHalf] = [about.paragraphs.slice(0, 2), about.paragraphs.slice(2)];
 
   return (
-    <section id="sobre" className="bg-primary py-20 text-primary-foreground lg:py-28">
-      <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
+    <section id="sobre" className="relative overflow-hidden bg-primary py-20 text-primary-foreground lg:py-28">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden sm:block">
+        <Rings
+          className="absolute left-6 top-8 h-8 w-8 -rotate-6 text-cream opacity-15 animate-float"
+          style={{ animationDuration: "8s" }}
+        />
+        <Heart
+          className="absolute right-8 top-16 h-6 w-6 rotate-12 text-cream opacity-15 animate-float"
+          style={{ animationDuration: "10s", animationDelay: "1.4s" }}
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-3xl px-6 text-center lg:px-8">
         <h2 className="font-display text-3xl font-bold tracking-tight md:text-4xl">
           {about.headline} <span className="text-coral">{about.headlineHighlight}</span>
         </h2>
@@ -418,8 +452,19 @@ function FAQSection() {
 
 function FinalCTA() {
   return (
-    <section className="bg-hero py-20 text-hero-foreground lg:py-28">
-      <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
+    <section className="relative overflow-hidden bg-hero py-20 text-hero-foreground lg:py-28">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden sm:block">
+        <Heart
+          className="absolute left-8 top-8 h-7 w-7 -rotate-6 text-cream opacity-15 animate-float"
+          style={{ animationDuration: "8s" }}
+        />
+        <Rings
+          className="absolute right-10 bottom-8 h-9 w-9 rotate-12 text-cream opacity-15 animate-float"
+          style={{ animationDuration: "10s", animationDelay: "0.8s" }}
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-3xl px-6 text-center lg:px-8">
         <h2 className="font-display text-3xl font-bold tracking-tight md:text-4xl">
           {finalCta.headline}
         </h2>
