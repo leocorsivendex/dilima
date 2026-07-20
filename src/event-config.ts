@@ -2,6 +2,8 @@ import heroImg from "@/assets/hero-vida-de-crente-casado-wide.png";
 import publico1 from "@/assets/publico-plateia-1.jpg";
 import publico2 from "@/assets/publico-plateia-2.jpg";
 import testimonialPoster from "@/assets/testimonial-casal-poster.jpg";
+import showPlateia1 from "@/assets/show-plateia-1.jpg";
+import showPlateia2 from "@/assets/show-plateia-2.jpg";
 
 // Único arquivo a editar para replicar esta LP em outro evento/cidade.
 // Trocar também as imagens em src/assets/ mantendo os mesmos nomes de arquivo.
@@ -48,6 +50,18 @@ export const artist = {
   blurb:
     "Comediante cristão e marido também, Douglas já levou o Vida de Crente Casado para [NÚMERO DE CIDADES] cidades e fez mais de [NÚMERO DE ESPECTADORES] casais rirem juntos nas edições anteriores. Ele fala de casamento porque vive de casamento, com todas as besteiras incluídas.",
 };
+
+// Fotos reais do show, usadas para quebrar o bloco de texto da seção Sobre.
+export const aboutGallery = [
+  {
+    img: showPlateia1,
+    alt: "Douglas Di Lima sentado no palco com a plateia de pé e as mãos levantadas atrás dele",
+  },
+  {
+    img: showPlateia2,
+    alt: "Auditório lotado de pé com as mãos levantadas durante o show",
+  },
+];
 
 export const tickets = [
   {

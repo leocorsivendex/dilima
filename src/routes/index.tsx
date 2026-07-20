@@ -23,6 +23,7 @@ import {
   hero,
   about,
   artist,
+  aboutGallery,
   tickets,
   socialProof,
   finalCta,
@@ -46,7 +47,7 @@ export default function Index() {
       <main>
         <HeroSection />
         <AboutSection />
-        <SocialProofSection />
+        {/* SocialProofSection oculta por enquanto, só o vídeo depoimento é prova social real hoje */}
         <LocationSection />
         <TicketsSection />
         <FAQSection />
@@ -175,6 +176,8 @@ function HeroSection() {
 }
 
 function AboutSection() {
+  const [firstHalf, secondHalf] = [about.paragraphs.slice(0, 2), about.paragraphs.slice(2)];
+
   return (
     <section id="sobre" className="bg-primary py-20 text-primary-foreground lg:py-28">
       <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
@@ -182,7 +185,28 @@ function AboutSection() {
           {about.headline} <span className="text-coral">{about.headlineHighlight}</span>
         </h2>
         <div className="mt-8 space-y-5 text-lg leading-relaxed opacity-95">
-          {about.paragraphs.map((paragraph, i) => (
+          {firstHalf.map((paragraph, i) => (
+            <p key={i}>{paragraph}</p>
+          ))}
+        </div>
+      </div>
+
+      <div className="mx-auto mt-12 grid max-w-4xl gap-3 px-6 sm:grid-cols-2 lg:px-8">
+        {aboutGallery.map((photo, i) => (
+          <div key={i} className="overflow-hidden rounded-3xl">
+            <img
+              src={photo.img}
+              alt={photo.alt}
+              loading="lazy"
+              className="aspect-[4/3] w-full object-cover"
+            />
+          </div>
+        ))}
+      </div>
+
+      <div className="mx-auto mt-12 max-w-3xl px-6 text-center lg:px-8">
+        <div className="space-y-5 text-lg leading-relaxed opacity-95">
+          {secondHalf.map((paragraph, i) => (
             <p key={i}>{paragraph}</p>
           ))}
         </div>
