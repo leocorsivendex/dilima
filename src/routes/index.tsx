@@ -213,21 +213,27 @@ function AboutSection() {
 
         {artist.blurb && <p className="mt-6 text-sm opacity-80">{artist.blurb}</p>}
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-3 sm:divide-x sm:divide-primary-foreground/15">
+        <div className="mt-12 grid gap-8 sm:grid-cols-3 sm:divide-x sm:divide-primary-foreground/30">
           <div className="px-2">
-            <Users className="mx-auto h-6 w-6 text-coral" />
+            <Users className="mx-auto h-6 w-6 text-cream" />
             <p className="mt-3 font-display text-xl font-semibold">Para casais</p>
-            <p className="mt-1 text-sm opacity-80">Casados, noivos ou namorando sério.</p>
+            <p className="mt-1 text-sm text-primary-foreground/90">
+              Casados, noivos ou namorando sério.
+            </p>
           </div>
           <div className="px-2">
-            <Ticket className="mx-auto h-6 w-6 text-coral" />
+            <Ticket className="mx-auto h-6 w-6 text-cream" />
             <p className="mt-3 font-display text-xl font-semibold">Humor cristão</p>
-            <p className="mt-1 text-sm opacity-80">Leve, respeitoso e sem ultrapassar linhas.</p>
+            <p className="mt-1 text-sm text-primary-foreground/90">
+              Leve, respeitoso e sem ultrapassar linhas.
+            </p>
           </div>
           <div className="px-2">
-            <Calendar className="mx-auto h-6 w-6 text-coral" />
+            <Calendar className="mx-auto h-6 w-6 text-cream" />
             <p className="mt-3 font-display text-xl font-semibold">Uma noite só</p>
-            <p className="mt-1 text-sm opacity-80">Aproximadamente 90 minutos de risada.</p>
+            <p className="mt-1 text-sm text-primary-foreground/90">
+              Aproximadamente 90 minutos de risada.
+            </p>
           </div>
         </div>
       </div>
@@ -376,14 +382,9 @@ function TicketsSection() {
                   Mais escolhido
                 </span>
               )}
-              <div className="mb-4">
+              <div className="mb-6">
                 <h3 className="font-display text-xl font-semibold">{ticket.name}</h3>
                 <p className="text-sm text-muted-foreground">{ticket.description}</p>
-              </div>
-              <div className="mb-6">
-                <span className="font-display text-4xl font-bold text-foreground">
-                  R${ticket.price}
-                </span>
               </div>
               <ul className="mb-8 flex-1 space-y-3 text-sm text-muted-foreground">
                 {ticket.included.map((item) => (
