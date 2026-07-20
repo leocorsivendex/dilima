@@ -24,7 +24,6 @@ import {
   about,
   artist,
   aboutGallery,
-  tickets,
   socialProof,
   finalCta,
   footer,
@@ -212,26 +211,28 @@ function AboutSection() {
         </div>
 
         {artist.blurb && <p className="mt-6 text-sm opacity-80">{artist.blurb}</p>}
+      </div>
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-3 sm:divide-x sm:divide-primary-foreground/30">
+      <div className="mt-16 bg-hero py-12 text-hero-foreground">
+        <div className="mx-auto grid max-w-4xl gap-8 px-6 text-center sm:grid-cols-3 sm:divide-x sm:divide-hero-foreground/20 lg:px-8">
           <div className="px-2">
-            <Users className="mx-auto h-6 w-6 text-cream" />
+            <Users className="mx-auto h-6 w-6 text-primary" />
             <p className="mt-3 font-display text-xl font-semibold">Para casais</p>
-            <p className="mt-1 text-sm text-primary-foreground/90">
+            <p className="mt-1 text-sm text-hero-foreground/90">
               Casados, noivos ou namorando sério.
             </p>
           </div>
           <div className="px-2">
-            <Ticket className="mx-auto h-6 w-6 text-cream" />
+            <Ticket className="mx-auto h-6 w-6 text-primary" />
             <p className="mt-3 font-display text-xl font-semibold">Humor cristão</p>
-            <p className="mt-1 text-sm text-primary-foreground/90">
+            <p className="mt-1 text-sm text-hero-foreground/90">
               Leve, respeitoso e sem ultrapassar linhas.
             </p>
           </div>
           <div className="px-2">
-            <Calendar className="mx-auto h-6 w-6 text-cream" />
+            <Calendar className="mx-auto h-6 w-6 text-primary" />
             <p className="mt-3 font-display text-xl font-semibold">Uma noite só</p>
-            <p className="mt-1 text-sm text-primary-foreground/90">
+            <p className="mt-1 text-sm text-hero-foreground/90">
               Aproximadamente 90 minutos de risada.
             </p>
           </div>
@@ -358,47 +359,18 @@ function LocationSection() {
 function TicketsSection() {
   return (
     <section id="ingressos" className="py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-3xl font-bold tracking-tight md:text-4xl">
-            Escolha seu ingresso
-          </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Três opções para você viver essa noite do jeito que preferir. Todos dão acesso ao show
-            completo.
-          </p>
-        </div>
+      <div className="mx-auto max-w-2xl px-6 text-center lg:px-8">
+        <h2 className="font-display text-3xl font-bold tracking-tight md:text-4xl">
+          Garanta seu ingresso
+        </h2>
+        <p className="mt-4 text-lg text-muted-foreground">
+          Acesso ao show completo. Valores e assentos disponíveis direto no checkout.
+        </p>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {tickets.map((ticket) => (
-            <div
-              key={ticket.name}
-              className={`relative flex flex-col rounded-2xl border p-6 shadow-sm transition-shadow hover:shadow-lg ${
-                ticket.featured ? "border-coral bg-card shadow-coral/10" : "border-border bg-card"
-              }`}
-            >
-              {ticket.featured && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-coral px-3 py-1 text-xs font-semibold text-accent-foreground">
-                  Mais escolhido
-                </span>
-              )}
-              <div className="mb-6">
-                <h3 className="font-display text-xl font-semibold">{ticket.name}</h3>
-                <p className="text-sm text-muted-foreground">{ticket.description}</p>
-              </div>
-              <ul className="mb-8 flex-1 space-y-3 text-sm text-muted-foreground">
-                {ticket.included.map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-coral" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Button variant={ticket.featured ? "cta" : "cta-outline"} className="w-full">
-                {ticket.cta}
-              </Button>
-            </div>
-          ))}
+        <div className="mt-10">
+          <Button variant="cta" size="lg" className="h-12 px-10 text-base">
+            Garantir meu ingresso agora
+          </Button>
         </div>
 
         <div className="mx-auto mt-12 flex max-w-lg flex-col items-center gap-2 text-center">
