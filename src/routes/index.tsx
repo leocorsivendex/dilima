@@ -1,6 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, MapPin, Ticket, Users, AlertCircle, Instagram, Mail } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 import {
   eventInfo,
@@ -11,6 +17,9 @@ import {
   socialProof,
   finalCta,
   footer,
+  scarcity,
+  guarantee,
+  faq,
 } from "@/event-config";
 
 function scrollTo(id: string) {
@@ -30,6 +39,7 @@ export default function Index() {
         <SocialProofSection />
         <LocationSection />
         <TicketsSection />
+        <FAQSection />
         <FinalCTA />
       </main>
       <Footer />
@@ -63,9 +73,15 @@ function Header() {
           >
             Ingressos
           </button>
+          <button
+            onClick={() => scrollTo("faq")}
+            className="transition-colors hover:text-foreground"
+          >
+            FAQ
+          </button>
         </div>
         <Button variant="cta" size="sm" className="shadow-none">
-          Garantir meu ingresso
+          Garantir meu ingresso agora
         </Button>
       </div>
     </header>
@@ -118,8 +134,10 @@ function HeroSection() {
             </Button>
           </div>
 
+          <p className="text-sm text-muted-foreground">{hero.ctaSubtext}</p>
+
           <p className="text-xs text-muted-foreground">
-            Classificação etária: {eventInfo.ageRating} · Lotação limitada
+            Classificação etária: {eventInfo.ageRating} · {scarcity.text}
           </p>
         </div>
 
@@ -155,11 +173,7 @@ function AboutSection() {
           ))}
         </div>
 
-        {artist.blurb && (
-          <p className="mt-6 text-sm opacity-80">
-            Com <strong>{artist.name}</strong>. {artist.blurb}
-          </p>
-        )}
+        {artist.blurb && <p className="mt-6 text-sm opacity-80">{artist.blurb}</p>}
 
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
           <div className="rounded-xl bg-primary-foreground/10 p-5 backdrop-blur-sm">
@@ -341,10 +355,43 @@ function TicketsSection() {
           ))}
         </div>
 
-        <p className="mt-10 text-center text-sm text-muted-foreground">
-          Meia-entrada disponível conforme a legislação local. A integração com o checkout da
-          plataforma de ingressos será ativada em breve.
-        </p>
+        <div className="mx-auto mt-10 max-w-lg rounded-2xl border border-border bg-card p-6 text-center">
+          <p className="font-display text-lg font-semibold text-foreground">
+            {guarantee.headline}
+          </p>
+          <p className="mt-2 text-sm text-muted-foreground">{guarantee.text}</p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FAQSection() {
+  return (
+    <section id="faq" className="py-20 lg:py-28">
+      <div className="mx-auto max-w-3xl px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="font-display text-3xl font-bold tracking-tight md:text-4xl">
+            Perguntas frequentes
+          </h2>
+        </div>
+
+        <Accordion type="single" collapsible className="mt-10">
+          {faq.map((item, i) => (
+            <AccordionItem key={item.question} value={`item-${i}`}>
+              <AccordionTrigger className="text-left font-display text-base">
+                {item.question}
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">{item.answer}</AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+
+        <div className="mt-12 flex justify-center">
+          <Button variant="cta" size="lg" className="h-12 px-8 text-base">
+            {finalCta.buttonLabel}
+          </Button>
+        </div>
       </div>
     </section>
   );
@@ -362,8 +409,7 @@ function FinalCTA() {
           {finalCta.buttonLabel}
         </Button>
         <p className="mt-4 text-xs opacity-70">
-          Classificação etária: {eventInfo.ageRating} · Lotação limitada · Ingressos sujeitos à
-          disponibilidade
+          Classificação etária: {eventInfo.ageRating} · {scarcity.text}
         </p>
       </div>
     </section>
