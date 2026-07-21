@@ -101,9 +101,16 @@ export function Header() {
             FAQ
           </button>
         </div>
-        <Button variant="cta" size="sm" className="shadow-none" onClick={trackLeadClick}>
-          <span className="hidden sm:inline">Garantir meu ingresso agora</span>
-          <span className="sm:hidden">Ingressos</span>
+        <Button variant="cta" size="sm" className="shadow-none" asChild>
+          <a
+            href={eventInfo.ticketLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={trackLeadClick}
+          >
+            <span className="hidden sm:inline">Garantir meu ingresso agora</span>
+            <span className="sm:hidden">Ingressos</span>
+          </a>
         </Button>
       </div>
     </header>
@@ -154,8 +161,15 @@ export function HeroSection() {
           </div>
 
           <div className="flex flex-wrap items-center gap-3 pt-2">
-            <Button variant="cta" size="lg" className="h-12 px-8 text-base" onClick={trackLeadClick}>
-              {hero.ctaLabel}
+            <Button variant="cta" size="lg" className="h-12 px-8 text-base" asChild>
+              <a
+                href={eventInfo.ticketLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={trackLeadClick}
+              >
+                {hero.ctaLabel}
+              </a>
             </Button>
             <Button
               variant="cta-outline"
@@ -241,13 +255,15 @@ export function HeroSectionV2() {
           </div>
 
           <div className="mt-6">
-            <Button
-              variant="cta"
-              size="lg"
-              className="h-12 w-full px-8 text-base sm:w-auto"
-              onClick={trackLeadClick}
-            >
-              {hero.ctaLabel}
+            <Button variant="cta" size="lg" className="h-12 w-full px-8 text-base sm:w-auto" asChild>
+              <a
+                href={eventInfo.ticketLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={trackLeadClick}
+              >
+                {hero.ctaLabel}
+              </a>
             </Button>
           </div>
 
@@ -466,8 +482,15 @@ export function TicketsSection() {
         </p>
 
         <div className="mt-10">
-          <Button variant="cta" size="lg" className="h-12 px-10 text-base" onClick={trackLeadClick}>
-            Garantir meu ingresso agora
+          <Button variant="cta" size="lg" className="h-12 px-10 text-base" asChild>
+            <a
+              href={eventInfo.ticketLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={trackLeadClick}
+            >
+              Garantir meu ingresso agora
+            </a>
           </Button>
         </div>
 
@@ -505,8 +528,15 @@ export function FAQSection() {
         </Accordion>
 
         <div className="mt-12 flex justify-center">
-          <Button variant="cta" size="lg" className="h-12 px-8 text-base" onClick={trackLeadClick}>
-            {finalCta.buttonLabel}
+          <Button variant="cta" size="lg" className="h-12 px-8 text-base" asChild>
+            <a
+              href={eventInfo.ticketLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={trackLeadClick}
+            >
+              {finalCta.buttonLabel}
+            </a>
           </Button>
         </div>
       </div>
@@ -533,8 +563,15 @@ export function FinalCTA() {
           {finalCta.headline}
         </h2>
         <p className="mt-5 text-lg opacity-90">{finalCta.subheadline}</p>
-        <Button variant="cta" size="lg" className="mt-8 h-12 px-8 text-base" onClick={trackLeadClick}>
-          {finalCta.buttonLabel}
+        <Button variant="cta" size="lg" className="mt-8 h-12 px-8 text-base" asChild>
+          <a
+            href={eventInfo.ticketLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={trackLeadClick}
+          >
+            {finalCta.buttonLabel}
+          </a>
         </Button>
         <p className="mt-4 text-xs opacity-70">
           Classificação etária: {eventInfo.ageRating} · {scarcity.text}

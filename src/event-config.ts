@@ -11,15 +11,17 @@ import showPlateia2 from "@/assets/show-plateia-2.jpg";
 export const eventInfo = {
   name: "Vida de Crente Casado",
   tagline: "Especial de comédia para casais",
-  date: "[DATA DO EVENTO]",
-  time: "[HORÁRIO]",
+  date: "Sexta-feira, 14 de agosto de 2026",
+  time: "20h",
   doors: "[ABERTURA DOS PORTÕES]",
   ageRating: "18 anos",
-  venue: "[NOME DO LOCAL, CIDADE/UF]",
+  venue: "Teatro Sesi Minas, Uberaba/MG",
   address: "[ENDEREÇO COMPLETO DO LOCAL]",
-  mapEmbed: "https://www.google.com/maps?q=Brasil&output=embed",
-  mapLink: "https://maps.google.com/?q=Brasil",
+  mapEmbed: "https://www.google.com/maps?q=Teatro+Sesi+Minas+Uberaba+MG&output=embed",
+  mapLink: "https://www.google.com/maps?q=Teatro+Sesi+Minas+Uberaba+MG",
   heroImage: heroImg,
+  ticketLink:
+    "https://bileto.sympla.com.br/event/121652/d/389865/s/2575349?share_id=1-copiarlink",
 };
 
 export const hero = {
