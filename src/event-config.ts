@@ -15,10 +15,11 @@ export const eventInfo = {
   time: "20h",
   doors: "[ABERTURA DOS PORTÕES]",
   ageRating: "18 anos",
-  venue: "Teatro Sesi Minas, Uberaba/MG",
-  address: "[ENDEREÇO COMPLETO DO LOCAL]",
-  mapEmbed: "https://www.google.com/maps?q=Teatro+Sesi+Minas+Uberaba+MG&output=embed",
-  mapLink: "https://www.google.com/maps?q=Teatro+Sesi+Minas+Uberaba+MG",
+  venue: "Centro Cultural SESIMINAS, Uberaba/MG",
+  address: "Praça Frei Eugênio, 231, Uberaba - MG",
+  mapEmbed:
+    "https://www.google.com/maps?q=Pra%C3%A7a+Frei+Eug%C3%AAnio+231+Uberaba+MG&output=embed",
+  mapLink: "https://www.google.com/maps?q=Pra%C3%A7a+Frei+Eug%C3%AAnio+231+Uberaba+MG",
   heroImage: heroImg,
   ticketLink:
     "https://bileto.sympla.com.br/event/121652/d/389865/s/2575349?share_id=1-copiarlink",
