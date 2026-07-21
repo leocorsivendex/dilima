@@ -2,6 +2,8 @@ import heroImg from "@/assets/hero-vida-de-crente-casado-wide.png";
 import publico1 from "@/assets/publico-plateia-1.jpg";
 import publico2 from "@/assets/publico-plateia-2.jpg";
 import testimonialPoster from "@/assets/testimonial-casal-poster.jpg";
+import showPlateia1 from "@/assets/show-plateia-1.jpg";
+import showPlateia2 from "@/assets/show-plateia-2.jpg";
 
 // Único arquivo a editar para replicar esta LP em outro evento/cidade.
 // Trocar também as imagens em src/assets/ mantendo os mesmos nomes de arquivo.
@@ -25,14 +27,16 @@ export const hero = {
   headline: "Toda casa de casal tem uma historinha boba que",
   headlineHighlight: "vira risada",
   subheadline:
-    "A ideia é simples: rir junto das coisas que já são normais, com respeito e identificação.",
-  ctaLabel: "Marca esse dia com quem faz até os probleminhas valerem a pena",
+    "Se vocês já brigaram essa semana por besteira, essa noite é pra vocês. A ideia é simples: rir junto das coisas que já são normais, com respeito e identificação.",
+  ctaLabel: "Garantir meu ingresso agora",
+  ctaSubtext: "Marca esse dia com quem faz até os probleminhas valerem a pena",
 };
 
 export const about = {
   headline: "Isso não é só piada.",
   headlineHighlight: "É a sua vida lá em casa.",
   paragraphs: [
+    "Se vocês já aguentaram trocentas besteiras um do outro e continuam de mãos dadas até hoje, isso já merece uma boa risada.",
     "Você já brigou por besteira com seu cônjuge? Tipo, uma besteira mesmo. Quem esqueceu de avisar que ia chegar tarde. Quem deixou a louça pro dia seguinte de novo. Quem cochilou no meio do culto e jurou que só fechou os olhos pra orar melhor.",
     "A gente sabe. Todo casamento tem essas fricções pequenas do dia a dia.",
     "\"Vida de Crente Casado\" pega exatamente essas situações, as mesmas que rolam na sua casa, e transforma numa noite de risada, leve e sem cobrança. A ideia é simples, rir junto das coisas que já são normais, com respeito e identificação.",
@@ -40,11 +44,24 @@ export const about = {
   ],
 };
 
-// Bio curta do artista. Aparece de forma discreta, não como headline da página.
+// Bio curta do artista. Preencher os campos entre colchetes com dados reais antes de publicar.
 export const artist = {
   name: "Douglas Di Lima",
-  blurb: "",
+  blurb:
+    "Comediante cristão e marido também, Douglas já levou o Vida de Crente Casado para [NÚMERO DE CIDADES] cidades e fez mais de [NÚMERO DE ESPECTADORES] casais rirem juntos nas edições anteriores. Ele fala de casamento porque vive de casamento, com todas as besteiras incluídas.",
 };
+
+// Fotos reais do show, usadas para quebrar o bloco de texto da seção Sobre.
+export const aboutGallery = [
+  {
+    img: showPlateia1,
+    alt: "Douglas Di Lima sentado no palco com a plateia de pé e as mãos levantadas atrás dele",
+  },
+  {
+    img: showPlateia2,
+    alt: "Auditório lotado de pé com as mãos levantadas durante o show",
+  },
+];
 
 export const tickets = [
   {
@@ -100,10 +117,56 @@ export const finalCta = {
   headline: "Bora rir dessas mesmas bobagens, juntos?",
   subheadline:
     "Traz seu par pra uma noite de identificação e risada, sem cobrança e sem sermão.",
-  buttonLabel: "Garantir meu ingresso",
+  buttonLabel: "Garantir meu ingresso agora",
 };
 
 export const footer = {
   instagramUrl: "https://instagram.com/vidadecrentecasado",
   email: "contato@vidadecrentecasado.com",
 };
+
+// Urgência real. Substituir o número entre colchetes pela contagem real de ingressos ou datas
+// disponíveis antes de publicar. Nunca deixar um número fixo que não reflita o estoque real.
+export const scarcity = {
+  text: "Restam [NÚMERO] ingressos Prata para essa edição em [CIDADE].",
+};
+
+export const guarantee = {
+  headline: "Compra sem risco",
+  text: "Não vai poder ir mais? Você pode remarcar seu ingresso para a próxima edição da sua cidade em até [NÚMERO] dias antes do evento, sem multa.",
+};
+
+// Preencher os campos entre colchetes com os dados reais do cliente antes de publicar.
+export const faq = [
+  {
+    question: "O show tem humor pesado ou ofensivo?",
+    answer:
+      "Não. É humor cristão, leve e respeitoso, sem ultrapassar linhas. Feito pra rir junto, não pra ofender ninguém.",
+  },
+  {
+    question: "Posso ir mesmo sem ser casado?",
+    answer: "Sim. O show é pra casais, noivos e namorados sérios de todo tipo.",
+  },
+  {
+    question: "Como funciona o pagamento?",
+    answer: "[FORMAS DE PAGAMENTO ACEITAS, EX: PIX, CARTÃO EM ATÉ Nx, BOLETO]",
+  },
+  {
+    question: "E se eu não puder mais ir?",
+    answer:
+      "Você pode remarcar seu ingresso para a próxima edição da sua cidade em até [NÚMERO] dias antes do evento, sem multa.",
+  },
+  {
+    question: "Tem meia-entrada?",
+    answer: "Sim, conforme a legislação local, mediante comprovação no dia do evento.",
+  },
+  {
+    question: "Quem é Douglas Di Lima?",
+    answer:
+      "Comediante cristão que já levou o Vida de Crente Casado para [NÚMERO DE CIDADES] cidades, fazendo casais e noivos cristãos rirem das próprias besteiras do dia a dia.",
+  },
+  {
+    question: "Tenho outras dúvidas, como falo com a produção?",
+    answer: "Chama no WhatsApp [NÚMERO] ou manda um e-mail para contato@vidadecrentecasado.com.",
+  },
+];
