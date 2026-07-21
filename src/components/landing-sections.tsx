@@ -40,6 +40,21 @@ export function scrollTo(id: string) {
   }
 }
 
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void;
+  }
+}
+
+// Dispara no clique dos CTAs de ingresso. Ainda não existe checkout embutido
+// (widget do Ingresso Cristão pendente), então o evento certo hoje é Lead,
+// não Purchase/InitiateCheckout.
+export function trackLeadClick() {
+  if (typeof window !== "undefined" && window.fbq) {
+    window.fbq("track", "Lead");
+  }
+}
+
 // O lucide-react nao tem um icone de alianças, entao desenhamos um simples.
 export function Rings(props: SVGProps<SVGSVGElement>) {
   return (
@@ -86,7 +101,7 @@ export function Header() {
             FAQ
           </button>
         </div>
-        <Button variant="cta" size="sm" className="shadow-none">
+        <Button variant="cta" size="sm" className="shadow-none" onClick={trackLeadClick}>
           <span className="hidden sm:inline">Garantir meu ingresso agora</span>
           <span className="sm:hidden">Ingressos</span>
         </Button>
@@ -139,7 +154,7 @@ export function HeroSection() {
           </div>
 
           <div className="flex flex-wrap items-center gap-3 pt-2">
-            <Button variant="cta" size="lg" className="h-12 px-8 text-base">
+            <Button variant="cta" size="lg" className="h-12 px-8 text-base" onClick={trackLeadClick}>
               {hero.ctaLabel}
             </Button>
             <Button
@@ -226,7 +241,12 @@ export function HeroSectionV2() {
           </div>
 
           <div className="mt-6">
-            <Button variant="cta" size="lg" className="h-12 w-full px-8 text-base sm:w-auto">
+            <Button
+              variant="cta"
+              size="lg"
+              className="h-12 w-full px-8 text-base sm:w-auto"
+              onClick={trackLeadClick}
+            >
               {hero.ctaLabel}
             </Button>
           </div>
@@ -446,7 +466,7 @@ export function TicketsSection() {
         </p>
 
         <div className="mt-10">
-          <Button variant="cta" size="lg" className="h-12 px-10 text-base">
+          <Button variant="cta" size="lg" className="h-12 px-10 text-base" onClick={trackLeadClick}>
             Garantir meu ingresso agora
           </Button>
         </div>
@@ -485,7 +505,7 @@ export function FAQSection() {
         </Accordion>
 
         <div className="mt-12 flex justify-center">
-          <Button variant="cta" size="lg" className="h-12 px-8 text-base">
+          <Button variant="cta" size="lg" className="h-12 px-8 text-base" onClick={trackLeadClick}>
             {finalCta.buttonLabel}
           </Button>
         </div>
@@ -513,7 +533,7 @@ export function FinalCTA() {
           {finalCta.headline}
         </h2>
         <p className="mt-5 text-lg opacity-90">{finalCta.subheadline}</p>
-        <Button variant="cta" size="lg" className="mt-8 h-12 px-8 text-base">
+        <Button variant="cta" size="lg" className="mt-8 h-12 px-8 text-base" onClick={trackLeadClick}>
           {finalCta.buttonLabel}
         </Button>
         <p className="mt-4 text-xs opacity-70">
