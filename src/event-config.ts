@@ -47,11 +47,10 @@ export const about = {
   ],
 };
 
-// Bio curta do artista. Preencher os campos entre colchetes com dados reais antes de publicar.
 export const artist = {
   name: "Douglas Di Lima",
   blurb:
-    "Comediante cristão e marido também, Douglas já levou o Vida de Crente Casado para [NÚMERO DE CIDADES] cidades e fez mais de [NÚMERO DE ESPECTADORES] casais rirem juntos nas edições anteriores. Ele fala de casamento porque vive de casamento, com todas as besteiras incluídas.",
+    "Comediante cristão e marido também, Douglas já levou a comédia cristã para 7 países e reúne mais de 1,5 milhão de seguidores acompanhando seu trabalho. Ele fala de casamento porque vive de casamento, com todas as besteiras incluídas.",
 };
 
 // Fotos reais do show, usadas para quebrar o bloco de texto da seção Sobre.
@@ -166,7 +165,7 @@ export const faq = [
   {
     question: "Quem é Douglas Di Lima?",
     answer:
-      "Comediante cristão que já levou o Vida de Crente Casado para [NÚMERO DE CIDADES] cidades, fazendo casais e noivos cristãos rirem das próprias besteiras do dia a dia.",
+      "Comediante cristão que já levou sua comédia para 7 países e reúne mais de 1,5 milhão de seguidores, fazendo casais e noivos cristãos rirem das próprias besteiras do dia a dia.",
   },
   {
     question: "Tenho outras dúvidas, como falo com a produção?",
