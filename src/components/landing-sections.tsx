@@ -203,7 +203,7 @@ export function HeroSectionV2() {
           </span>
 
           <h1 className="mt-4 font-display text-4xl font-bold leading-[1.1] tracking-tight text-cream md:text-5xl">
-            {hero.headline} <span className="text-coral">{hero.headlineHighlight}</span>
+            {hero.headline} <span className="text-cream">{hero.headlineHighlight}</span>
           </h1>
 
           <p className="mt-4 text-lg text-cream/85">{hero.subheadline}</p>
