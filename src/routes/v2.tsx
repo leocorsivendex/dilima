@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
   Header,
-  HeroSection,
+  HeroSectionV2,
   AboutSection,
   LocationSection,
   TicketsSection,
@@ -10,14 +10,15 @@ import {
   Footer,
 } from "@/components/landing-sections";
 
-export default function Index() {
+// Rascunho de teste: Hero com imagem de fundo full-bleed (inspirado em referência de mercado),
+// resto da página idêntico à V1. Página atual em "/" não é afetada.
+function IndexV2() {
   return (
     <div className="relative overflow-x-hidden bg-cream text-charcoal">
       <Header />
       <main>
-        <HeroSection />
+        <HeroSectionV2 />
         <AboutSection />
-        {/* SocialProofSection oculta por enquanto, só o vídeo depoimento é prova social real hoje */}
         <LocationSection />
         <TicketsSection />
         <FAQSection />
@@ -28,6 +29,6 @@ export default function Index() {
   );
 }
 
-export const Route = createFileRoute("/")({
-  component: Index,
+export const Route = createFileRoute("/v2")({
+  component: IndexV2,
 });
